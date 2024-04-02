@@ -22,7 +22,7 @@ public class DataLoader implements CommandLineRunner {
         List<Role> all = roleRepo.findAll();
         if (all.isEmpty()){
             List<Role> roles = roleRepo.saveAll(List.of(new Role("ROLE_ADMIN"),new Role("ROLE_USER")));
-            User user = new User("user","img","123", "admin",Gender.MALE,roles);
+            User user = new User("user","img","admin", "123",Gender.MALE,roles);
             userRepo.save(user);
         }
     }
